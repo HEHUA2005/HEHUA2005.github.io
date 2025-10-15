@@ -84,15 +84,9 @@
 		<nav class="header-smart-menu">
 			
 				
-					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-				
 			
 				
-					<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-				
 			
-				
-					<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
 				
 			
 		</nav>
@@ -100,17 +94,17 @@
 			<div class="social">
 				
 					
-						<a class="github" href="https://github.com" 
+						<a class="github" href="https://github.com/HEHUA2005" 
 												title="GitHub" target="_blank"><i class="icon-github"></i></a>
 					
 				
 					
-						<a class="bilibili" href="https://bilibili.com" 
+						<a class="bilibili" href="https://space.bilibili.com/436650160" 
 												title="bilibili" target="_blank"><i class="icon-bilibili"></i></a>
 					
 				
 					
-						<a class="mail" href="/google.com" 
+						<a class="mail" href="/hehua2005@gmail.com" 
 												title="Email" target="_blank"><i class="icon-mail"></i></a>
 					
 				
@@ -161,17 +155,17 @@
 					
 						
 						<a class="github" target="_blank" 
-							href="https://github.com" title="GitHub"><i class="icon-github"></i></a>
+							href="https://github.com/HEHUA2005" title="GitHub"><i class="icon-github"></i></a>
 						
 					
 						
 						<a class="bilibili" target="_blank" 
-							href="https://bilibili.com" title="bilibili"><i class="icon-bilibili"></i></a>
+							href="https://space.bilibili.com/436650160" title="bilibili"><i class="icon-bilibili"></i></a>
 						
 					
 						
 						<a class="mail" target="_blank" 
-							href="/google.com" title="Email"><i class="icon-mail"></i></a>
+							href="/hehua2005@gmail.com" title="Email"><i class="icon-mail"></i></a>
 						
 					
 				</div>
@@ -476,7 +470,7 @@
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: true,
+		innerArchive: false,
 		showTags: true
 	}
 </script>
@@ -511,15 +505,9 @@
     
     
       
-      
-      
     
       
-      
-      
     
-      
-      
       
     
     
@@ -528,108 +516,18 @@
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
-      
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
         
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
   </div>
   <div class="tools-wrap">
     
-    	<section class="tools-section tools-section-all" q-show="innerArchive">
-        <div class="search-wrap">
-          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
-          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
-          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
-        </div>
-        <div class="widget tagcloud search-tag">
-          <p class="search-tag-wording">tag:</p>
-          <label class="search-switch">
-            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
-          </label>
-          <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">说说</a>
-              </li>
-            
-            <div class="clearfix"></div>
-          </ul>
-        </div>
-        <ul class="search-ul">
-          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia-plus根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
-            3、在根目录_config.yml里添加配置：
-<pre style="font-size: 12px;" q-show="jsonFail">
-  jsonContent:
-    meta: false
-    pages: false
-    posts:
-      title: true
-      date: true
-      path: true
-      text: false
-      raw: false
-      content: false
-      slug: false
-      updated: false
-      comments: false
-      link: false
-      permalink: false
-      excerpt: false
-      categories: false
-      tags: true
-</pre>
-          </p>
-          <li class="search-li" q-repeat="items" q-show="isShow">
-            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
-            <p class="search-time">
-              <i class="icon-calendar icon"></i>
-              <span q-text="date|dateformat"></span>
-            </p>
-            <p class="search-tag">
-              <i class="icon-price-tags icon"></i>
-              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
-            </p>
-          </li>
-        </ul>
-    	</section>
-    
 
     
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://github.com/HEHUA2005" target="_blank" 
-                class="search-title" >
-                
-                  <i class="icon-link icon"></i>
-                
-                GitHub
-              </a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
-    
 
-    
-    	<section class="tools-section tools-section-me" q-show="aboutme">
-        
-          
-  	  		<div class="aboutme-wrap" id="aboutme">主要涉及技术：<br>Java后端开发、聚合支付、<br>公众号开发、开源爱好者、Linux<br><br>联系QQ:2434387555<br><br>很惭愧<br><br>只做了一点微小的工作<br>谢谢大家</div>
-  	  	
-    	</section>
     
   </div>
   

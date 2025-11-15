@@ -20,9 +20,9 @@
 #header .header-nav .social a.steam .icon-steam:before {
   content: "";
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image: url('/img/steam-icon.svg');
+  width: 26px;
+  height: 26px;
+  background-image: url('/img/steam.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
